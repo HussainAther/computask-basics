@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from computask.runtime.scoring import CHECKS
 from computask.runtime.reset import reset_environment
+from runtime.reset import reset_environment
 
 @dataclass
 class TaskScore:
