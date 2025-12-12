@@ -1,0 +1,31 @@
+{
+  "benchmark_id": "computask-basics-v1",
+  "version": "1.0",
+  "allowed_roots": ["{DESKTOP}", "{HOME}/Downloads", "{HOME}/AgentX_Sandbox"],
+  "tasks": [
+    {
+      "id": "files_01_create_folder",
+      "category": "files",
+      "instruction": "Create a folder named AgentX_Test on the Desktop.",
+      "time_limit_sec": 180,
+      "start_state": { "reset_profile": "clean_basic" },
+      "checks": [
+        { "type": "path_exists", "path": "{DESKTOP}/AgentX_Test" },
+        { "type": "is_directory", "path": "{DESKTOP}/AgentX_Test" }
+      ],
+      "points": 1
+    },
+    {
+      "id": "files_02_create_notes",
+      "category": "files",
+      "instruction": "Inside Desktop/AgentX_Test create notes.txt with exact text: hello agentbeats",
+      "time_limit_sec": 180,
+      "start_state": { "reset_profile": "clean_basic" },
+      "checks": [
+        { "type": "file_contains_exact", "path": "{DESKTOP}/AgentX_Test/notes.txt", "text": "hello agentbeats" }
+      ],
+      "points": 1
+    }
+  ]
+}
+
